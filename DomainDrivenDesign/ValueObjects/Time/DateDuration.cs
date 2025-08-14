@@ -21,6 +21,6 @@ public record DateDuration
         Unit = unit;
     }
 
-    public int Value { get; set; }
-    public DateDurationUnit Unit { get; set; }
+    public int Value { get; protected set; }
+    public DateDurationUnit Unit { get; protected set; }
 }

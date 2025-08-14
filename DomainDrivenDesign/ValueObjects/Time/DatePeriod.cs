@@ -10,8 +10,8 @@ public record DatePeriod
         Duration = duration.Guard(new ArgumentNullException(nameof(duration)));
     }
 
-    public DateOnly StartDate { get; set; }
-    public DateDuration Duration { get; set; }
+    public DateOnly StartDate { get; protected set; }
+    public DateDuration Duration { get; protected set; }
 
     public DateOnly GetEndDate()
     {

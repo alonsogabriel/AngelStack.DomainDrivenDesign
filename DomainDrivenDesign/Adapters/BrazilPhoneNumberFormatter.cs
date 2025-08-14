@@ -9,13 +9,13 @@ public class BrazilPhoneNumberFormatter : IPhoneNumberFormatter
 {
     public string Format(PhoneNumber number)
     {
-        if (number.Number.Length is not (8 or 9))
-        {
-            throw new InvalidOperationException("Brazilian phone numbers must have 8 or 9 digits.");
-        }
         if (number.CountryCode.Value is not CountryCodes.Brazil)
         {
             throw new ArgumentException("Invalid country code.", nameof(number.CountryCode));
+        }
+        if (number.Number.Length is not (8 or 9))
+        {
+            throw new InvalidOperationException("Brazilian phone numbers must have 8 or 9 digits.");
         }
 
         number.AreaCode.Guard(new ArgumentNullException(nameof(number.AreaCode)));
