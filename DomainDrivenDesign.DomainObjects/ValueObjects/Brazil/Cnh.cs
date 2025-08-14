@@ -16,22 +16,22 @@ public record Cnh
 {
     public Cnh(
         CnhType type,
-        string number,
+        CnhNumber number,
         DateOnly firstExpiration,
         DateOnly expiration,
         DateOnly issuedAt,
         IssuingAuthority issuingAuthority)
     {
         Type = type;
-        Number = number;
+        Number = number.Guard(new ArgumentNullException(nameof(number)));
         FirstExpiration = firstExpiration;
         Expiration = expiration;
         IssuedAt = issuedAt;
-        IssuingAuthority = issuingAuthority;
+        IssuingAuthority = issuingAuthority.Guard(new ArgumentNullException(nameof(issuedAt)));
     }
 
     public CnhType Type { get; protected set; }
-    public string Number { get; protected set; }
+    public CnhNumber Number { get; protected set; }
     public DateOnly FirstExpiration { get; protected set; }
     public DateOnly Expiration { get; protected set; }
     public DateOnly IssuedAt { get; protected set; }

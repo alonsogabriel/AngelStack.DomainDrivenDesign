@@ -1,12 +1,7 @@
 ﻿using DomainDrivenDesign.Abstractions.Extensions;
+using DomainDrivenDesign.DomainObjects.Factories;
 
 namespace DomainDrivenDesign.DomainObjects.ValueObjects;
-
-public enum PhoneNumberFormat
-{
-    Brazil,
-    Usa,
-}
 
 public record PhoneNumber
 {
@@ -23,13 +18,10 @@ public record PhoneNumber
 
     public string Value => $"+{CountryCode} {AreaCode}{Number}";
 
-    public string Format(PhoneNumberFormat format)
+    public string GetFormatted()
     {
-        return format switch
-        {
-            PhoneNumberFormat.Brazil => Value,
-            PhoneNumberFormat.Usa => Value,
-            _ => Value,
-        };
+        var formatter = PhoneNumberFormatterFactory.FromCountryCode(CountryCode);
+
+        return formatter.Format(this);
     }
 }
