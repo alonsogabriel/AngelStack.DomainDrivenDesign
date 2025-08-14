@@ -2,9 +2,16 @@
 
 namespace DomainDrivenDesign.DomainObjects.ValueObjects;
 
-public record CountryCode : ValidatableStringValue
+public record CountryCode
 {
-    public CountryCode(string value) : base(value)
+    public CountryCode(int value)
     {
+        if (value < 0)
+        {
+            throw new ArgumentException("Value can not be negative.", nameof(value));
+        }
+        Value = value;
     }
+
+    public int Value { get; protected set; }
 }
