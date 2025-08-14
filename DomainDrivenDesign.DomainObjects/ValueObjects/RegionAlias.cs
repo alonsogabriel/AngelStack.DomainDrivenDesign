@@ -3,8 +3,10 @@ using DomainDrivenDesign.Abstractions.ValueObjects;
 
 namespace DomainDrivenDesign.DomainObjects.ValueObjects;
 
-[StringValidation(MinLength = 1, MaxLength = 20)]
+[StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
 public record RegionAlias : ValidatableStringValue
 {
+    public const int MIN_LENGTH = 1;
+    public const int MAX_LENGTH = 20;
     public RegionAlias(string value) : base(value) { }
 }
