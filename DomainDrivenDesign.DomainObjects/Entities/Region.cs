@@ -3,36 +3,40 @@ using DomainDrivenDesign.DomainObjects.ValueObjects;
 
 namespace DomainDrivenDesign.DomainObjects.Entities;
 
-public class Region<T> : AbstractEntity<T>
+public class Region : AbstractEntity<int>
 {
-    private readonly List<Region<T>> _regions = [];
+    private readonly List<Region> _regions = [];
     private readonly List<City> _cities = [];
 
     protected Region() { }
 
-    protected Region(T id) : base(id) { }
+    protected Region(int id) : base(id) { }
 
-    public Region(int typeId, string name, string? alias = null, int? parentId = null)
+    public Region(Country country, RegionType type, RegionName name, RegionAlias? alias = null, Region? parent = null)
     {
-        TypeId = typeId;
-        Name = new RegionName(name);
-        ParentId = parentId;
-        if (alias != null)
-        {
-            Alias = new RegionAlias(alias);
-        }
+        Country = country ?? throw new ArgumentNullException(nameof(country));
+        CountryId = country.Id;
+        Type = type ?? throw new ArgumentNullException(nameof(type));
+        TypeId = type.Id;
+        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Parent = parent;
+        ParentId = parent?.Id;
+        Alias = alias;
     }
 
-    public int? ParentId { get; set; }
-    public RegionName Name { get; set; }
-    public RegionAlias? Alias { get; set; }
-    public int TypeId { get; set; }
-    public RegionType Type { get; set; }
-    public IReadOnlyList<Region<T>> Regions => _regions;
+    public int CountryId { get; protected set; }
+    public Country Country { get; protected set; }
+    public int? ParentId { get; protected set; }
+    public Region? Parent { get; protected set; }
+    public RegionName Name { get; protected set; }
+    public RegionAlias? Alias { get; protected set; }
+    public int TypeId { get; protected set; }
+    public RegionType Type { get; protected set; }
+    public IReadOnlyList<Region> Regions => _regions;
     public IReadOnlyList<City> Cities => _cities;
     public IEnumerable<City> AllCities => GetCitiesRecursevely(this);
 
-    protected static IEnumerable<City> GetCitiesRecursevely(Region<T> region)
+    protected static IEnumerable<City> GetCitiesRecursevely(Region region)
     {
         foreach (var city in region._cities)
         {
@@ -46,14 +50,5 @@ public class Region<T> : AbstractEntity<T>
                 yield return city;
             }
         }
-    }
-}
-
-public class Region : Region<int>
-{
-    public Region() { }
-    public Region(int typeId, string name, string? alias = null, int? parentId = null) :
-        base(typeId, name, alias, parentId)
-    {
     }
 }
