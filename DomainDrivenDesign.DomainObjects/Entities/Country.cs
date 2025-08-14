@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainDrivenDesign.Abstractions.Entities;
+using DomainDrivenDesign.DomainObjects.ValueObjects;
 
-namespace DomainDrivenDesign.DomainObjects.Entities
+namespace DomainDrivenDesign.DomainObjects.Entities;
+
+public class Country : AbstractEntity<int>
 {
-    internal class Country
+    protected Country() { }
+    public Country(CountryName name)
     {
+        Name = name ?? throw new ArgumentNullException(nameof(name));
     }
+    public CountryName Name { get; protected set; }
 }

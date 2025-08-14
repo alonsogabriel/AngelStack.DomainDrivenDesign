@@ -11,14 +11,15 @@ public class Address : AbstractEntity
         Street street,
         Neighborhood? neighborhood,
         AddressNumber number,
-        int cityId,
+        City city,
         AddressDetails? details)
     {
         ZipCode = zipCode ?? throw new ArgumentNullException(nameof(zipCode));
         Street = street ?? throw new ArgumentNullException(nameof(street));
         Neighborhood = neighborhood;
         Number = number ?? throw new ArgumentNullException(nameof(number));
-        CityId = cityId;
+        City = city ?? throw new ArgumentNullException(nameof(city));
+        CityId = city.Id;
         Details = details;
     }
     public ZipCode ZipCode { get; protected set; }
