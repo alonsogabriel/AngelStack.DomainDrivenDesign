@@ -1,11 +1,9 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
+using AngelStack.Common.Strings;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-// [StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
-public record RegionName : StringValueValidatable
-{
-    public const int MIN_LENGTH = 1;
-    public const int MAX_LENGTH = 80;
-    public RegionName(string value) : base(value) { }
-}
+[Required]
+[MinLength(1)]
+[MaxLength(80)]
+public record RegionName(string Value) : StringValueValidatable(Value);

@@ -1,11 +1,8 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
+using AngelStack.Common.Strings;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-// [StringValidation(Pattern = "^[0-9]+$")]
-public record Integer : StringValueValidatable
-{
-    public Integer(string value) : base(value)
-    {
-    }
-}
+[Required]
+[RegularExpression("^[0-9]+$")]
+public record Integer(string Value) : StringValueValidatable(Value);

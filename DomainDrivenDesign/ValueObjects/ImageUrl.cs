@@ -4,6 +4,5 @@ using AngelStack.DomainDrivenDesign.Abstractions;
 namespace DomainDrivenDesign.ValueObjects;
 
 [Required]
-[MinLength(1)]
-[MaxLength(20)]
-public record RegionAlias(string Value) : StringValueValidatable(Value);
+[MaxLength(500)]
+public record ImageUrl(string Value) : StringValueValidatable(Value);

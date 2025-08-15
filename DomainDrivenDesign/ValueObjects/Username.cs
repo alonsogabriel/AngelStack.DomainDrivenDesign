@@ -1,12 +1,19 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
+using AngelStack.Common.Strings;
+using AngelStack.Common.Guards;
+using System.Reflection;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-// [StringValidation(Pattern = "^[A-Za-z0-9_\\-]{2,32}$")]
-public record Username : StringValueValidatable
+[Required]
+[MinLength(2)]
+[MaxLength(32)]
+public record Username(string Value) : StringValueValidatable(Value)
 {
-    public const int MAX_LENGTH = 32;
-    public Username(string value) : base(value)
+    public static int? GetMaxLength(Type type)
     {
+        var maxLength = type.Guard().GetCustomAttribute<MaxLength>()?.Value;
+
+        return maxLength;
     }
 }

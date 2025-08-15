@@ -10,6 +10,4 @@ public enum ImageType
     Bmp,
 }
 
-public record Image(string Url, ImageType Type, long Size, string Name, byte[]? Content)
-{
-}
+public record Image(ImageUrl Url, ImageType Type, long Size, ImageName Name, byte[]? Content);

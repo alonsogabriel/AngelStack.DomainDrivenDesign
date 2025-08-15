@@ -1,24 +1,24 @@
-﻿using AngelStack.DomainDrivenDesign.Abstractions;
+﻿using AngelStack.Common.Strings;
+using AngelStack.DomainDrivenDesign.Abstractions;
+using DomainDrivenDesign.Interfaces;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-// [StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
-public record PersonName : StringValueValidatable
+[Required]
+[MinLength(2)]
+[MaxLength(120)]
+public record PersonName(string Value) : StringValueValidatable(Value)
 {
-    public const int MIN_LENGTH = 2;
-    public const int MAX_LENGTH = 120;
-    public PersonName(string value) : base(value)
-    {
-    }
-
     public string GetFirstName()
     {
         return Value.Split(' ').FirstOrDefault() ?? string.Empty;
     }
 
-    public string GetLastName()
+    public string GetLastName(ILastNameStrategy? strategy = null)
     {
-        return Value.Split(' ').LastOrDefault() ?? string.Empty;
+        return strategy?.GetLastName(this) ??
+            Value.Split(' ').LastOrDefault() ??
+            string.Empty;
     }
 
     public string GetInitials()
