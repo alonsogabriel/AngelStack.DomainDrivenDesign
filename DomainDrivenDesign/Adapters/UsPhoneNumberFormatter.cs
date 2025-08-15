@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.Constants;
 using DomainDrivenDesign.Interfaces;
 using DomainDrivenDesign.ValueObjects;
@@ -9,7 +9,7 @@ internal class UsPhoneNumberFormatter : IPhoneNumberFormatter
 {
     public string Format(PhoneNumber number)
     {
-        number.AreaCode.Guard(new ArgumentNullException(nameof(number.AreaCode)));
+        number.AreaCode.Guard();
         if (number.CountryCode.Value is not CountryCodes.UnitedStates)
         {
             throw new ArgumentException("Invalid country code.", nameof(number.CountryCode));

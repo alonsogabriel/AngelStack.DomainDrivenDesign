@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.Adapters;
 using DomainDrivenDesign.Constants;
 using DomainDrivenDesign.Interfaces;
@@ -10,7 +10,7 @@ public static class PhoneNumberFormatterFactory
 {
     public static IPhoneNumberFormatter FromCountryCode(CountryCode code)
     {
-        code.Guard(new ArgumentNullException(nameof(code)));
+        code.Guard();
 
         return code.Value switch
         {

@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 
 namespace DomainDrivenDesign.ValueObjects.Time;
 
@@ -7,7 +7,7 @@ public record TimePeriod
     public TimePeriod(TimeOnly startTime, TimeDuration duration)
     {
         StartTime = startTime;
-        Duration = duration.Guard(new ArgumentNullException(nameof(duration)));
+        Duration = duration.Guard();
     }
     public TimeOnly StartTime { get; protected set; }
     public TimeDuration Duration { get; protected set; }

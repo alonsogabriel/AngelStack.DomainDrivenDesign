@@ -1,5 +1,5 @@
-﻿using DomainDrivenDesign.Abstractions.Entities;
-using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Abstractions;
 using DomainDrivenDesign.ValueObjects;
 
 namespace DomainDrivenDesign.Entities;
@@ -15,11 +15,11 @@ public class Address : AbstractEntity
         City city,
         AddressDetails? details)
     {
-        ZipCode = zipCode.Guard(new ArgumentNullException(nameof(zipCode)));
-        Street = street.Guard(new ArgumentNullException(nameof(street)));
+        ZipCode = zipCode.Guard();
+        Street = street.Guard();
         Neighborhood = neighborhood;
-        Number = number.Guard(new ArgumentNullException(nameof(number)));
-        City = city.Guard(new ArgumentNullException(nameof(city)));
+        Number = number.Guard();
+        City = city.Guard();
         CityId = city.Id;
         Details = details;
     }

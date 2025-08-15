@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Entities;
+﻿using AngelStack.DomainDrivenDesign.Abstractions;
 using DomainDrivenDesign.ValueObjects;
 
 namespace DomainDrivenDesign.Entities;

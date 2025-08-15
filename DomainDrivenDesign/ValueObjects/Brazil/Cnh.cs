@@ -1,6 +1,5 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.Entities;
-using DomainDrivenDesign.ValueObjects;
 
 namespace DomainDrivenDesign.ValueObjects.Brazil;
 
@@ -24,11 +23,11 @@ public record Cnh
         IssuingAuthority issuingAuthority)
     {
         Type = type;
-        Number = number.Guard(new ArgumentNullException(nameof(number)));
+        Number = number.Guard();
         FirstExpiration = firstExpiration;
         Expiration = expiration;
         IssuedAt = issuedAt;
-        IssuingAuthority = issuingAuthority.Guard(new ArgumentNullException(nameof(issuedAt)));
+        IssuingAuthority = issuingAuthority.Guard();
     }
 
     public CnhType Type { get; protected set; }
@@ -40,7 +39,7 @@ public record Cnh
 
     public void RenewFromPerson(AbstractPerson person)
     {
-        var dateOfBirth = person.DateOfBirth.Guard(new ArgumentNullException(nameof(person.DateOfBirth)));
+        var dateOfBirth = person.DateOfBirth.Guard();
         RenewFromDateOfBirth(dateOfBirth);
     }
 

@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.ValueObjects;
 using DomainDrivenDesign.ValueObjects.Brazil;
 
@@ -13,7 +13,7 @@ public abstract class AbstractBrazilPerson : AbstractPerson
     public AbstractBrazilPerson(Cpf cpf, PersonName name, DateOfBirth? dateOfBirth, Gender? gender)
         : base(name, dateOfBirth, gender)
     {
-        Cpf = cpf.Guard(new ArgumentNullException(nameof(cpf)));
+        Cpf = cpf.Guard();
     }
 
     public Cpf? Cpf { get; set; }

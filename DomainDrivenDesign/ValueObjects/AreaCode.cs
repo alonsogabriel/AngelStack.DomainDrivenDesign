@@ -1,8 +1,8 @@
-﻿using DomainDrivenDesign.Abstractions.ValueObjects;
+﻿using AngelStack.DomainDrivenDesign.Abstractions;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-public record AreaCode : ValidatableStringValue
+public record AreaCode : StringValueValidatable
 {
     public AreaCode(string value) : base(value)
     {

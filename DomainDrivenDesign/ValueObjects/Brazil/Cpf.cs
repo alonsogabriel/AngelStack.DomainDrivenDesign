@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.ValueObjects;
+﻿using AngelStack.DomainDrivenDesign.Abstractions;
 using DomainDrivenDesign.DomainObjects.Validators;
 
 namespace DomainDrivenDesign.ValueObjects.Brazil;

@@ -1,10 +1,9 @@
-﻿using DomainDrivenDesign.Abstractions.Attributes;
-using DomainDrivenDesign.Abstractions.ValueObjects;
+﻿using AngelStack.DomainDrivenDesign.Abstractions;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-[StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
-public record Street : ValidatableStringValue
+// [StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
+public record Street : StringValueValidatable
 {
     public const int MIN_LENGTH = 8;
     public const int MAX_LENGTH = 120;

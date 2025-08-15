@@ -1,5 +1,5 @@
-﻿using DomainDrivenDesign.Abstractions.Entities;
-using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Abstractions;
 using DomainDrivenDesign.ValueObjects;
 
 namespace DomainDrivenDesign.Entities;
@@ -16,7 +16,7 @@ public class AbstractPerson : AbstractEntity
 
     public AbstractPerson(PersonName name, DateOfBirth? dateOfBirth, Gender? gender)
     {
-        Name = name.Guard(new ArgumentNullException(nameof(name)));
+        Name = name.Guard();
         DateOfBirth = dateOfBirth;
         Gender = gender;
     }

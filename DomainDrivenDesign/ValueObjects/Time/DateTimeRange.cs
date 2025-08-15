@@ -1,6 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
-
-namespace DomainDrivenDesign.ValueObjects.Time;
+﻿namespace DomainDrivenDesign.ValueObjects.Time;
 
 public record DateTimeRange
 {

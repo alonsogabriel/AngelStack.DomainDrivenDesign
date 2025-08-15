@@ -1,6 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.ValueObjects;
-
-namespace DomainDrivenDesign.ValueObjects;
+﻿namespace DomainDrivenDesign.ValueObjects;
 
 public record CountryCode
 {

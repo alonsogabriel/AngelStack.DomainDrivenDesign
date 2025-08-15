@@ -1,7 +1,7 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
-using DomainDrivenDesign.ValueObjects;
-using DomainDrivenDesign.Interfaces;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.Constants;
+using DomainDrivenDesign.Interfaces;
+using DomainDrivenDesign.ValueObjects;
 
 namespace DomainDrivenDesign.Adapters;
 
@@ -18,7 +18,7 @@ public class BrazilPhoneNumberFormatter : IPhoneNumberFormatter
             throw new InvalidOperationException("Brazilian phone numbers must have 8 or 9 digits.");
         }
 
-        number.AreaCode.Guard(new ArgumentNullException(nameof(number.AreaCode)));
+        number.AreaCode.Guard();
 
         var countryCode = number.CountryCode.Value;
         var areaCode = number.AreaCode!.Value;

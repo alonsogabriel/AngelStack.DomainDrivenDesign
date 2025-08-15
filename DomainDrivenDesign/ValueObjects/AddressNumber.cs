@@ -1,10 +1,12 @@
-﻿using DomainDrivenDesign.Abstractions.Attributes;
-using DomainDrivenDesign.Abstractions.ValueObjects;
+﻿using AngelStack.Common.Strings;
+using AngelStack.DomainDrivenDesign.Abstractions;
 
 namespace DomainDrivenDesign.ValueObjects;
 
-[StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH, Pattern = "^[A-Za-z0-9\\-]+$")]
-public record AddressNumber : ValidatableStringValue
+[MinLength(MIN_LENGTH)]
+[MaxLength(MAX_LENGTH)]
+[RegularExpression("^[A-Za-z0-9\\-]+$")]
+public record AddressNumber : StringValueValidatable
 {
     public const int MIN_LENGTH = 1;
     public const int MAX_LENGTH = 20;

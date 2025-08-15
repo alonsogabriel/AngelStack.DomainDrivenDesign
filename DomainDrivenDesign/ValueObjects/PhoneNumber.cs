@@ -1,4 +1,4 @@
-﻿using DomainDrivenDesign.Abstractions.Extensions;
+﻿using AngelStack.Common.Guards;
 using DomainDrivenDesign.Factories;
 
 namespace DomainDrivenDesign.ValueObjects;
@@ -7,9 +7,9 @@ public record PhoneNumber
 {
     public PhoneNumber(CountryCode countryCode, AreaCode? areaCode, Integer number)
     {
-        CountryCode = countryCode.Guard(new ArgumentNullException(nameof(countryCode)));
+        CountryCode = countryCode.Guard();
         AreaCode = areaCode;
-        Number = number.Guard(new ArgumentNullException(nameof(number)));
+        Number = number.Guard();
     }
 
     public CountryCode CountryCode { get; protected set; }
