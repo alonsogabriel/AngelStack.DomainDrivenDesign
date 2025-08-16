@@ -1,7 +1,7 @@
-﻿using AngelStack.DomainDrivenDesign.Abstractions;
-using AngelStack.Common.Strings;
+﻿using AngelStack.Common.Strings;
+using AngelStack.DomainDrivenDesign.Abstractions;
 
-namespace DomainDrivenDesign.ValueObjects;
+namespace AngelStack.DomainDrivenDesign.ValueObjects;
 
 [Required]
 [MinLength(8)]

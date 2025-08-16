@@ -1,6 +1,6 @@
-﻿using DomainDrivenDesign.ValueObjects;
+﻿using AngelStack.DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Interfaces;
+namespace AngelStack.DomainDrivenDesign.Interfaces;
 
 public interface IPhoneNumberFormatter
 {

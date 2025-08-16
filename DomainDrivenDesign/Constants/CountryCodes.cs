@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenDesign.Constants;
+﻿namespace AngelStack.DomainDrivenDesign.Constants;
 
 public static class CountryCodes
 {

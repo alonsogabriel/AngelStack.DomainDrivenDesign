@@ -1,8 +1,8 @@
 ﻿using AngelStack.Common.Guards;
 using AngelStack.DomainDrivenDesign.Abstractions;
-using DomainDrivenDesign.ValueObjects;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Entities;
+namespace AngelStack.DomainDrivenDesign.Entities;
 
 public enum Gender
 {

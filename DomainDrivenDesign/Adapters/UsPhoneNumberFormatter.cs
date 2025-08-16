@@ -1,9 +1,9 @@
 ﻿using AngelStack.Common.Guards;
-using DomainDrivenDesign.Constants;
-using DomainDrivenDesign.Interfaces;
-using DomainDrivenDesign.ValueObjects;
+using AngelStack.DomainDrivenDesign.Constants;
+using AngelStack.DomainDrivenDesign.Interfaces;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Adapters;
+namespace AngelStack.DomainDrivenDesign.Adapters;
 
 internal class UsPhoneNumberFormatter : IPhoneNumberFormatter
 {

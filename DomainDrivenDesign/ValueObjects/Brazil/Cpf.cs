@@ -1,7 +1,7 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
 using DomainDrivenDesign.DomainObjects.Validators;
 
-namespace DomainDrivenDesign.ValueObjects.Brazil;
+namespace AngelStack.DomainDrivenDesign.ValueObjects.Brazil;
 
 public record Cpf : StringValue
 {

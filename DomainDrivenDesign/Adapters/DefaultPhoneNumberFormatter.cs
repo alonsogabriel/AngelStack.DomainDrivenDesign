@@ -1,7 +1,7 @@
-﻿using DomainDrivenDesign.Interfaces;
-using DomainDrivenDesign.ValueObjects;
+﻿using AngelStack.DomainDrivenDesign.Interfaces;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Adapters;
+namespace AngelStack.DomainDrivenDesign.Adapters;
 
 public class DefaultPhoneNumberFormatter : IPhoneNumberFormatter
 {

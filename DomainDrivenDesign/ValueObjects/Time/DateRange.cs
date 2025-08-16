@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenDesign.ValueObjects.Time;
+﻿namespace AngelStack.DomainDrivenDesign.ValueObjects.Time;
 
 public record DateRange
 {

@@ -1,7 +1,7 @@
 ﻿using AngelStack.Common.Guards;
-using DomainDrivenDesign.Entities;
+using AngelStack.DomainDrivenDesign.Entities;
 
-namespace DomainDrivenDesign.ValueObjects.Brazil;
+namespace AngelStack.DomainDrivenDesign.ValueObjects.Brazil;
 
 public enum CnhType
 {

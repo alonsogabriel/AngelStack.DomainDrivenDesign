@@ -1,8 +1,8 @@
 ﻿using AngelStack.Common.Guards;
-using DomainDrivenDesign.ValueObjects;
-using DomainDrivenDesign.ValueObjects.Brazil;
+using AngelStack.DomainDrivenDesign.ValueObjects;
+using AngelStack.DomainDrivenDesign.ValueObjects.Brazil;
 
-namespace DomainDrivenDesign.Entities;
+namespace AngelStack.DomainDrivenDesign.Entities;
 
 public abstract class AbstractBrazilPerson : AbstractPerson
 {

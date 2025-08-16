@@ -1,10 +1,10 @@
 ﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Constants;
+using AngelStack.DomainDrivenDesign.Interfaces;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 using DomainDrivenDesign.Adapters;
-using DomainDrivenDesign.Constants;
-using DomainDrivenDesign.Interfaces;
-using DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Factories;
+namespace AngelStack.DomainDrivenDesign.Factories;
 
 public static class PhoneNumberFormatterFactory
 {

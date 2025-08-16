@@ -1,8 +1,8 @@
 ﻿using AngelStack.Common.Guards;
 using AngelStack.Common.Strings;
-using DomainDrivenDesign.ValueObjects;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 
-namespace DomainDrivenDesign.Interfaces;
+namespace AngelStack.DomainDrivenDesign.Interfaces;
 
 public interface ILastNameStrategy
 {

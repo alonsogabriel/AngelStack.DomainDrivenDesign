@@ -1,9 +1,9 @@
-﻿using AngelStack.DomainDrivenDesign.Abstractions;
-using AngelStack.Common.Strings;
+﻿using System.Reflection;
 using AngelStack.Common.Guards;
-using System.Reflection;
+using AngelStack.Common.Strings;
+using AngelStack.DomainDrivenDesign.Abstractions;
 
-namespace DomainDrivenDesign.ValueObjects;
+namespace AngelStack.DomainDrivenDesign.ValueObjects;
 
 [Required]
 [MinLength(2)]

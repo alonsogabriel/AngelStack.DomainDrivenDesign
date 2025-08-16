@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenDesign.ValueObjects;
+﻿namespace AngelStack.DomainDrivenDesign.ValueObjects;
 
 public record CountryCode
 {

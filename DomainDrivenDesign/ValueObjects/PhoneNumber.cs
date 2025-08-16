@@ -1,7 +1,7 @@
 ﻿using AngelStack.Common.Guards;
-using DomainDrivenDesign.Factories;
+using AngelStack.DomainDrivenDesign.Factories;
 
-namespace DomainDrivenDesign.ValueObjects;
+namespace AngelStack.DomainDrivenDesign.ValueObjects;
 
 public record PhoneNumber
 {

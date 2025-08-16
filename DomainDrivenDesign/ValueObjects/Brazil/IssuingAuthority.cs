@@ -1,6 +1,6 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
 
-namespace DomainDrivenDesign.ValueObjects.Brazil;
+namespace AngelStack.DomainDrivenDesign.ValueObjects.Brazil;
 
 // [StringValidation(MinLength = MIN_LENGTH, MaxLength = MAX_LENGTH)]
 public record IssuingAuthority : StringValidatable
