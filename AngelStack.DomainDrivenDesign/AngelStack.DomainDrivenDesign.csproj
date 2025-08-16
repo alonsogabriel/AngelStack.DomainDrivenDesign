@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<NoWarn>8618</NoWarn>
+
+		<PackageId>AngelStack.DomainDrivenDesign</PackageId>
+		<Version>1.0.1</Version>
+		<Authors>Gabriel W. Alonso</Authors>
+		<Company>AngelStack</Company>
+		<PackageDescription>Provides common domain entities, value objects and validations to support Domain-Driven Design projects.</PackageDescription>
+		<PackageTags>DDD;Utilities;Shared;Common</PackageTags>
+		<RepositoryUrl>https://github.com/alonsogabriel/AngelStack.DomainDrivenDesign</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AngelStack.DomainDrivenDesign.Abstractions" Version="1.0.6" />
+		<None Include="..\logo.png" Pack="true" PackagePath="" />
+		<None Include="..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+</Project>

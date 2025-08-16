@@ -1,0 +1,27 @@
+﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Factories;
+
+namespace AngelStack.DomainDrivenDesign.ValueObjects;
+
+public record PhoneNumber
+{
+    public PhoneNumber(CountryCode countryCode, AreaCode? areaCode, Integer number)
+    {
+        CountryCode = countryCode.Guard();
+        AreaCode = areaCode;
+        Number = number.Guard();
+    }
+
+    public CountryCode CountryCode { get; protected set; }
+    public AreaCode? AreaCode { get; protected set; }
+    public Integer Number { get; protected set; }
+
+    public string Value => $"+{CountryCode} {AreaCode}{Number}";
+
+    public string GetFormatted()
+    {
+        var formatter = PhoneNumberFormatterFactory.FromCountryCode(CountryCode);
+
+        return formatter.Format(this);
+    }
+}
