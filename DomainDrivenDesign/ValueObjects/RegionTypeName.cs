@@ -6,4 +6,4 @@ namespace DomainDrivenDesign.ValueObjects;
 [Required]
 [MinLength(2)]
 [MaxLength(80)]
-public record RegionTypeName(string Value) : StringValueValidatable(Value);
+public record RegionTypeName(string Value) : StringValidatable(Value);

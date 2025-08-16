@@ -6,4 +6,4 @@ namespace DomainDrivenDesign.ValueObjects;
 [Required]
 [MinLength(2)]
 [MaxLength(100)]
-public record CityName(string Value) : StringValueValidatable(Value);
+public record CityName(string Value) : StringValidatable(Value);

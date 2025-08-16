@@ -5,4 +5,4 @@ namespace DomainDrivenDesign.ValueObjects;
 
 [Required]
 [RegularExpression("^[0-9]+$")]
-public record Integer(string Value) : StringValueValidatable(Value);
+public record Integer(string Value) : StringValidatable(Value);

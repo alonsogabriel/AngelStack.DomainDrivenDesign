@@ -8,7 +8,7 @@ namespace DomainDrivenDesign.ValueObjects;
 [Required]
 [MinLength(2)]
 [MaxLength(32)]
-public record Username(string Value) : StringValueValidatable(Value)
+public record Username(string Value) : StringValidatable(Value)
 {
     public static int? GetMaxLength(Type type)
     {

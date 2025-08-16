@@ -7,4 +7,4 @@ namespace DomainDrivenDesign.ValueObjects;
 [MinLength(1)]
 [MaxLength(20)]
 [RegularExpression("^[A-Za-z0-9\\-]+$")]
-public record AddressNumber(string Value) : StringValueValidatable(Value);
+public record AddressNumber(string Value) : StringValidatable(Value);

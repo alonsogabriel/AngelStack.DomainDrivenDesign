@@ -7,4 +7,4 @@ namespace DomainDrivenDesign.ValueObjects;
 [MinLength(1)]
 [MaxLength(40)]
 [RegularExpression("^[A-Za-z0-9\\-\\.]+$")]
-public record ZipCode(string Value) : StringValueValidatable(Value);
+public record ZipCode(string Value) : StringValidatable(Value);

@@ -6,4 +6,4 @@ namespace DomainDrivenDesign.ValueObjects;
 [Required]
 [MaxLength(10)]
 [RegularExpression("^[0-9]{1,10}$")]
-public record AreaCode(string Value) : StringValueValidatable(Value);
+public record AreaCode(string Value) : StringValidatable(Value);

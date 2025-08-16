@@ -5,4 +5,4 @@ namespace DomainDrivenDesign.ValueObjects;
 
 [Required]
 [MaxLength(500)]
-public record ImageUrl(string Value) : StringValueValidatable(Value);
+public record ImageUrl(string Value) : StringValidatable(Value);

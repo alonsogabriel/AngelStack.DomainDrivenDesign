@@ -7,7 +7,7 @@ namespace DomainDrivenDesign.ValueObjects;
 [Required]
 [MinLength(2)]
 [MaxLength(120)]
-public record PersonName(string Value) : StringValueValidatable(Value)
+public record PersonName(string Value) : StringValidatable(Value)
 {
     public string GetFirstName()
     {
