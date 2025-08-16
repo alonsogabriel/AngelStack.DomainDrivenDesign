@@ -1,8 +1,8 @@
 ﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Adapters;
 using AngelStack.DomainDrivenDesign.Constants;
 using AngelStack.DomainDrivenDesign.Interfaces;
 using AngelStack.DomainDrivenDesign.ValueObjects;
-using DomainDrivenDesign.Adapters;
 
 namespace AngelStack.DomainDrivenDesign.Factories;
 
