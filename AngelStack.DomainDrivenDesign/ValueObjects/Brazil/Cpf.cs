@@ -1,5 +1,5 @@
 ﻿using AngelStack.DomainDrivenDesign.Abstractions;
-using DomainDrivenDesign.DomainObjects.Validators;
+using AngelStack.DomainDrivenDesign.Validators;
 
 namespace AngelStack.DomainDrivenDesign.ValueObjects.Brazil;
 
