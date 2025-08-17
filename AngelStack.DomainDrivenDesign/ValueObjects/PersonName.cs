@@ -1,5 +1,6 @@
 ﻿using AngelStack.Common.Strings;
 using AngelStack.DomainDrivenDesign.Abstractions;
+using AngelStack.DomainDrivenDesign.Adapters;
 using AngelStack.DomainDrivenDesign.Interfaces;
 
 namespace AngelStack.DomainDrivenDesign.ValueObjects;
@@ -16,9 +17,9 @@ public record PersonName(string Value) : StringValidatable(Value)
 
     public string GetLastName(ILastNameStrategy? strategy = null)
     {
-        return strategy?.GetLastName(this) ??
-            Value.Split(' ').LastOrDefault() ??
-            string.Empty;
+        strategy ??= new DefaultLastNameStrategy();
+
+        return strategy.GetLastName(this);
     }
 
     public string GetInitials()

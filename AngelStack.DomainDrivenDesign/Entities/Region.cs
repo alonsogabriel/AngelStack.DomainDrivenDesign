@@ -1,4 +1,5 @@
-﻿using AngelStack.DomainDrivenDesign.Abstractions;
+﻿using AngelStack.Common.Guards;
+using AngelStack.DomainDrivenDesign.Abstractions;
 using AngelStack.DomainDrivenDesign.ValueObjects;
 
 namespace AngelStack.DomainDrivenDesign.Entities;
@@ -14,11 +15,11 @@ public class Region : AbstractEntity<int>
 
     public Region(Country country, RegionType type, RegionName name, RegionAlias? alias = null, Region? parent = null)
     {
-        Country = country ?? throw new ArgumentNullException(nameof(country));
+        Country = country.Guard();
         CountryId = country.Id;
-        Type = type ?? throw new ArgumentNullException(nameof(type));
+        Type = type.Guard();
         TypeId = type.Id;
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name.Guard();
         Parent = parent;
         ParentId = parent?.Id;
         Alias = alias;
