@@ -5,6 +5,7 @@ namespace AngelStack.DomainDrivenDesign.ValueObjects;
 
 public record PhoneNumber
 {
+    protected PhoneNumber() { }
     public PhoneNumber(CountryCode countryCode, AreaCode? areaCode, Integer number)
     {
         CountryCode = countryCode.Guard();

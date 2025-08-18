@@ -19,11 +19,13 @@ public class AbstractPerson : AbstractEntity
         Name = name.Guard();
         DateOfBirth = dateOfBirth;
         Gender = gender;
+        PlaceOfBirthId = placeOfBirth?.Id;
         PlaceOfBirth = placeOfBirth;
     }
 
     public PersonName Name { get; protected set; }
     public DateOfBirth? DateOfBirth { get; protected set; }
     public Gender? Gender { get; protected set; }
+    public int? PlaceOfBirthId { get; protected set; }
     public City? PlaceOfBirth { get; protected set; }
 }
