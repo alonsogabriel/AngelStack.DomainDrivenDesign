@@ -19,8 +19,8 @@ internal class UsPhoneNumberFormatter : IPhoneNumberFormatter
         var areaCode = number.AreaCode!.Value;
 
         // In US, numbers are usually split as NXX-NXXXX
-        var start = number.Number.Value[..3];
-        var end = number.Number.Value[3..];
+        var start = number.Value[..3];
+        var end = number.Value[3..];
 
         return $"+{countryCode} ({areaCode}) {start}-{end}";
     }
