@@ -13,7 +13,7 @@ public class BrazilPhoneNumberFormatter : IPhoneNumberFormatter
         {
             throw new ArgumentException("Invalid country code.", nameof(number.CountryCode));
         }
-        if (number.Number.Length is not (8 or 9))
+        if (number.Length is not (8 or 9))
         {
             throw new InvalidOperationException("Brazilian phone numbers must have 8 or 9 digits.");
         }
@@ -22,9 +22,9 @@ public class BrazilPhoneNumberFormatter : IPhoneNumberFormatter
 
         var countryCode = number.CountryCode.Value;
         var areaCode = number.AreaCode!.Value;
-        var splitIndex = number.Number.Length - 4;
-        var start = number.Number.Value[..splitIndex];
-        var end = number.Number.Value[splitIndex..];
+        var splitIndex = number.Length - 4;
+        var start = number.Value[..splitIndex];
+        var end = number.Value[splitIndex..];
 
         return $"+{countryCode} ({areaCode}) {start}-{end}";
     }
