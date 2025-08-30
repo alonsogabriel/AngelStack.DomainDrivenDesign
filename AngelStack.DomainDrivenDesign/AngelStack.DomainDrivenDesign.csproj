@@ -18,7 +18,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AngelStack.DomainDrivenDesign.Abstractions" Version="1.0.7" />
+		<PackageReference Include="AngelStack.DomainDrivenDesign.Abstractions" Version="1.0.8" />
 		<None Include="..\logo.png" Pack="true" PackagePath="" />
 		<None Include="..\README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
