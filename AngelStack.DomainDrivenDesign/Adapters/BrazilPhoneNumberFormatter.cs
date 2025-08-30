@@ -1,5 +1,4 @@
-﻿using AngelStack.Common.Guards;
-using AngelStack.DomainDrivenDesign.Constants;
+﻿using AngelStack.DomainDrivenDesign.Constants;
 using AngelStack.DomainDrivenDesign.Interfaces;
 using AngelStack.DomainDrivenDesign.ValueObjects;
 
@@ -9,21 +8,15 @@ public class BrazilPhoneNumberFormatter : IPhoneNumberFormatter
 {
     public string Format(PhoneNumber number)
     {
-        if (number.CountryCode.Value is not CountryCodes.Brazil)
-        {
-            throw new ArgumentException("Invalid country code.", nameof(number.CountryCode));
-        }
-        if (number.Length is not (8 or 9))
-        {
-            throw new InvalidOperationException("Brazilian phone numbers must have 8 or 9 digits.");
-        }
+        var fromBrazil = number.CountryCode.Value is CountryCodes.Brazil;
+        var validLength = number.Length is 10 or 11;
 
-        number.AreaCode.Guard();
+        if (!fromBrazil || !validLength) return number.Value;
 
         var countryCode = number.CountryCode.Value;
-        var areaCode = number.AreaCode!.Value;
         var splitIndex = number.Length - 4;
-        var start = number.Value[..splitIndex];
+        var areaCode = number.Value[..2];
+        var start = number.Value[2..splitIndex];
         var end = number.Value[splitIndex..];
 
         return $"+{countryCode} ({areaCode}) {start}-{end}";
